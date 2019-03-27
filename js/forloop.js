@@ -32,8 +32,8 @@
 
     var condition = true;
     do {
-       console.log('once');
-       break;
-    }while(condition);
+        console.log('once');
+        break;
+    } while (condition);
 
 }());
