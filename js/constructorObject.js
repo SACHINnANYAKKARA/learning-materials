@@ -1,3 +1,5 @@
+
+
 (function () {
 
     'use strict'
@@ -12,5 +14,8 @@
     console.log(myObject.propertyIsEnumerable('constructor'));
     console.log(myObject.propertyIsEnumerable('testProperty'));
 
+      console.log("fd");
 
-});
+
+
+}());
