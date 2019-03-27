@@ -6,7 +6,7 @@
 // console.log(mainHeading);
 
     var header = document.querySelectorAll('header');
-    console.log(header);
+    console.log(header );
 
 
 

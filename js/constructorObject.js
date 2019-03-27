@@ -2,23 +2,26 @@
 
     'use strict'
 
-    var myObject = {};
-    console.log(myObject.constructor);
-    console.log(myObject.hasOwnProperty('constructor'));
+    function loadPage(xhr, urlToLoad) {
 
-    myObject.testProperty == 'test';
-    console.log(myObject.hasOwnProperty('testProperty'));
+        xhr.onload = function () {
 
-    console.log(myObject.propertyIsEnumerable('constructor'));
-    console.log(myObject.propertyIsEnumerable('testProperty'));
+            var response = xhr.responseText;
+            parseAndInsertPage(response);
 
-    console.log(myObject.propertyIsEnumerable('constructor'));
-    console.log(myObject.propertyIsEnumerable('testProperty'));
+        }
 
+        xhr.open('GET', urlToLoad, true);
+        xhr.send();
 
-    console.log("fd");
+    }
 
+    function parseAndInsertPage(pageString) {
+        var bodyTemp = pageString.split('<head>')[1],
+            body = bodyTemp.split('</html>')[0];
 
+        document.body.outerHTML = body;
+    }
 
 
 }());
